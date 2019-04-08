@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helios.litemalladmin.dao.IBrandDao">
+    <resultMap id="brands" type="com.helios.litemalladmin.entity.Brand">
+        
+    </resultMap>
+
+    <sql id="BaseColumnList">
+
+    </sql>
+
+    <select id="findById" resultType="com.helios.litemalladmin.entity.Brand">
+
+    </select>
+
+    <select id="findAll" resultType="com.helios.litemalladmin.entity.Brand">
+
+    </select>
+
+    <insert id="insertBrand">
+
+    </insert>
+
+    <update id="updateBrand">
+
+    </update>
+
+    <delete id="deleteBatch">
+
+    </delete>
+</mapper>

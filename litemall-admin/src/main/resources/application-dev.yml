@@ -1,0 +1,21 @@
+server:
+  port: 8808
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mall?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+    #driver-class-name: org.postgresql.Driver
+    #url: jdbc:postgresql://127.0.0.1:5432/litemall?useUnicode=true&characterEncoding=utf8
+    #username: postgres
+    #password: 123456
+  # security temp user&password
+  security:
+    user:
+      name: user
+      password: 123
+logging:
+  level:
+    root: debug
+    com.helios: trace

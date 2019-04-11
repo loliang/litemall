@@ -35,23 +35,23 @@ public class ServerResponse<T> implements Serializable {
         return code == ResponseCode.SUCCESS.getCode();
     }
 
-    public static <T> ServerResponse success(String msg, T data) {
+    public static <T> ServerResponse<T> success(String msg, T data) {
         return new ServerResponse<T>(ResponseCode.SUCCESS.getCode(), msg, data);
     }
 
-    public static <T> ServerResponse success(String msg) {
+    public static <T> ServerResponse<T> success(String msg) {
         return new ServerResponse<T>(ResponseCode.SUCCESS.getCode(), msg);
     }
 
-    public static <T> ServerResponse failed(String msg, T data) {
+    public static <T> ServerResponse<T> failed(String msg, T data) {
         return new ServerResponse<T>(ResponseCode.ERROR.getCode(), msg, data);
     }
 
-    public static <T> ServerResponse failed(String msg) {
+    public static <T> ServerResponse<T> failed(String msg) {
         return new ServerResponse<T>(ResponseCode.ERROR.getCode(), msg);
     }
 
-    public static <T> ServerResponse response(int code, String msg, T data) {
+    public static <T> ServerResponse<T> response(int code, String msg, T data) {
         return new ServerResponse<T>(code, msg, data);
     }
 

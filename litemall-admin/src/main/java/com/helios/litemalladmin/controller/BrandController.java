@@ -1,8 +1,8 @@
 package com.helios.litemalladmin.controller;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.helios.litemalladmin.common.ResponseCode;
 import com.helios.litemalladmin.common.ServerResponse;
 import com.helios.litemalladmin.entity.Brand;
 import com.helios.litemalladmin.service.IBrandService;
@@ -20,21 +20,21 @@ import java.util.List;
  * @date 2019/3/10
  */
 @RestController
-@RequestMapping("manage/brand")
+@RequestMapping("manage/brands")
 public class BrandController {
 
     @Autowired
     IBrandService brandService;
 
     @GetMapping
-    public ServerResponse<PageInfo> findAllBrands(int pageNum, int pageSize) {
+    public ServerResponse<PageInfo<Brand>> findAllBrands(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<Brand> brands = brandService.findAll();
         PageInfo<Brand> pageInfo = new PageInfo<>(brands);
-        return ServerResponse.<PageInfo>success("success", pageInfo);
+        return ServerResponse.success("success", pageInfo);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ServerResponse<Brand> findOne(@PathVariable("id") Long id) {
         return ServerResponse.success("success", brandService.findById(id));
     }

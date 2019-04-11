@@ -12,7 +12,7 @@ import java.util.List;
 public interface IBrandDao {
     /**
      *
-     * @return
+     * @return List<Brand>
      */
     List<Brand> findAll();
 
